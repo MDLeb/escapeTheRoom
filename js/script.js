@@ -30,7 +30,7 @@ const room = () => {
             if (elem.dataset['name'] == 'carpet' && !luggage.find(item => item.name == "card1")) {
                 let card = modal.querySelector('.room__modal_card').cloneNode(true);
                 modal.append(card);
-                card.style.setProperty('--modal-card', `url('../source/card1.png')`);
+                card.style.setProperty('--modal-card', 'url("../source/card1.png")');
                 card.style.display = 'block';
                 card.style.top = '280px';
                 card.style.left = '550px';
@@ -38,7 +38,7 @@ const room = () => {
                 card.addEventListener('click', () => {
                     addLuggageItem({
                         name: 'card1',
-                        bg: `url('../source/card1.png')`,
+                        bg: "url('./source/card1.png')",
                         numb: 1,
                     })
                     card.style.display = 'none';
@@ -51,7 +51,7 @@ const room = () => {
             if (elem.dataset['name'] == 'plant' && !luggage.find(item => item.name == "card2")) {
                 let card = modal.querySelector('.room__modal_card').cloneNode(true);
                 modal.append(card);
-                card.style.setProperty('--modal-card', `url('../source/card2.png')`);
+                card.style.setProperty('--modal-card', 'url("../source/card2.png")');
                 card.style.display = 'block';
                 card.style.top = '45px';
                 card.style.left = '390px';
@@ -59,7 +59,7 @@ const room = () => {
                 card.addEventListener('click', () => {
                     addLuggageItem({
                         name: 'card2',
-                        bg: `url('../source/card2.png')`,
+                        bg: "url('./source/card2.png')",
                         numb: 2,
                     })
                     card.style.display = 'none';
@@ -71,7 +71,7 @@ const room = () => {
             if (elem.dataset['name'] == 'sofa' && !luggage.find(item => item.name == "card3")) {
                 let card = modal.querySelector('.room__modal_card').cloneNode(true);
                 modal.append(card);
-                card.style.setProperty('--modal-card', `url('../source/card3.png')`);
+                card.style.setProperty('--modal-card', 'url("../source/card3.png")');
                 card.style.display = 'block';
                 card.style.top = '410px';
                 card.style.left = '570px';
@@ -80,7 +80,7 @@ const room = () => {
                     //luggage.push('card3');
                     addLuggageItem({
                         name: 'card3',
-                        bg: `url('../source/card3.png')`,
+                        bg: "url('./source/card3.png')",
                         numb: 3,
                     })
                     card.style.display = 'none';
@@ -134,7 +134,6 @@ const room = () => {
                     
                     modal.querySelectorAll('.pinNum').forEach((elem) => {
                         elem.addEventListener('click', () => {
-                            console.log('---');
                             enteredPin += elem.dataset['num'];
                             console.log(enteredPin);
                             if(checkPin()) {
@@ -168,7 +167,7 @@ const room = () => {
         key.addEventListener('click', () => {
             addLuggageItem({
                 name: 'key',
-                bg: `url('../source/key.png')`,
+                bg: `url('./source/key.png')`,
             })
             key.style.display = 'none';
         }, {once:true});
@@ -178,6 +177,7 @@ const room = () => {
     let luggageObj = document.querySelector('.luggage');
     let luggageItem = document.createElement('div');
     luggageItem.classList.add('luggage__item');
+    
     let addLuggageItem = (item) => {
         luggage.push(item);
         let newItem = luggageItem.cloneNode(true);
