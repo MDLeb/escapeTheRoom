@@ -42,7 +42,6 @@ const room = () => {
                         numb: 1,
                     })
                     card.style.display = 'none';
-                    console.log(luggage);
                 }, {once:true});
                 modal.querySelector('.room__modal_close').addEventListener('click', () => {
                     card.style.display = 'none';
@@ -100,7 +99,6 @@ const room = () => {
                     modal.querySelector('.room__modal_close').addEventListener('click', () => {
                         modal.querySelectorAll('.cardPort').forEach((elem) => elem.remove());
                         document.querySelectorAll('.luggage__item').forEach((elem) => {
-                            console.log(elem);
                             if(elem.getAttribute('id') != 'key') elem.remove()
                         });
                         luggage.forEach(item => {
@@ -135,7 +133,6 @@ const room = () => {
                     modal.querySelectorAll('.pinNum').forEach((elem) => {
                         elem.addEventListener('click', () => {
                             enteredPin += elem.dataset['num'];
-                            console.log(enteredPin);
                             if(checkPin()) {
                                addKey();
                             }
@@ -204,7 +201,6 @@ const room = () => {
     }
 
     let dragCards = () => {
-        console.log('+');
         $("#cardLug-1").draggable();
         $("#cardLug-2").draggable();
         $("#cardLug-3").draggable();
@@ -223,15 +219,12 @@ const room = () => {
                             let pinNum = document.createElement('div');
                             pinNum.classList.add('pinNum');
                             pinNum.setAttribute('id', `pinNum-${i}`);
-                            console.log('+-+-');
                             pinNum.dataset['num'] = i;
                             modal.append(pinNum);
                         }
                         modal.querySelectorAll('.pinNum').forEach((elem) => {
                             elem.addEventListener('click', () => {
-                                console.log('---');
                                 enteredPin += elem.dataset['num'];
-                                console.log(enteredPin);
                                 if(checkPin()) {
                                   addKey();
                                 }
@@ -256,16 +249,5 @@ const room = () => {
 
 
 }
-// $(document).ready(function() {
-//         console.log('+');
-//         $("#cardLug-1").draggable();
-//         $("#cardPort-1").droppable(
-//         {
-//             drop: function(event, ui)
-//             {
-//                     $(this).css("background-color", "#f0f0a0");
-//             }
-//         });
-    
-// });
+
 $(document).ready(room());
