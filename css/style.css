@@ -1,0 +1,246 @@
+:root {
+    --modal-bg: url('../source/095b5e47a36c648a1f7f9b48940f2a58.jpg');
+    --modal-card: url('../source/card1.png');
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.luggage {
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    background-color: beige;
+    border: 4px solid green;
+    display: flex;
+    align-items: center;
+}
+.luggage__item {
+    height: 70%;
+    width: 100px;
+    margin: 0 20px;
+    z-index: 6;
+}
+.room {
+    width: 800px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+}
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 15px;
+    background: url('../source/arrow.png') center/100% auto no-repeat;
+    z-index: 8;
+    cursor: pointer;
+}
+.room__modal {
+    width: 800px;
+    height: 550px;
+    background: var(--modal-bg) center/ 100% 100% no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+}
+.room__modal.active {
+    display: block;
+}
+.room__modal_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+.room__modal_card {
+    background: var(--modal-card) center/100% 100% no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 80px;
+    display: none;
+}
+.room__modal #cardPort-1,
+.room__modal #cardPort-2,
+.room__modal #cardPort-3 {
+    height: 180px;
+    width: 140px;
+    position: absolute;
+    border: 1px solid orange;
+}
+.room__modal #cardPort-1 {
+    top: 260px;
+    left: 120px;
+}
+.room__modal #cardPort-2 {
+    top: 95px;
+    left: 315px;
+}
+.room__modal #cardPort-3 {
+    top: 270px;
+    right: 135px;
+}
+.pinNum {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 8;
+}
+#pinNum-1 {
+    top: 235px;
+    left: 170px;
+}
+#pinNum-2 {
+    top: 376px;
+    left: 170px;
+}
+#pinNum-3 {
+    top: 305px;
+    left: 95px;
+}
+#pinNum-4 {
+    top: 165px;
+    left: 170px;
+}
+.key {
+    background: url('../source/key.png') center/70% auto no-repeat;
+    width: 400px;
+    height: 400px;
+    margin: 70px auto;
+}
+.room__view-1.active,
+.room__view-2.active {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.room__view-1,
+.room__view-2 {
+    display: none;
+}
+.view-1__bg,
+.view-2__bg {
+    height: 100%;
+    width: 100%;
+    background: url("../source/bg1.png") center/100% 100% no-repeat;
+}
+.view-2__bg {
+    background: url("../source/bg2.png") center/100% 100% no-repeat;
+}
+.open_door {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 290px;
+    left: 420px;
+}
+.clickable {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+.view-1__window {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 150px;
+    height: 150px;
+    width: 150px;
+    background: url("../source/window.png") center/100% auto no-repeat;
+}
+.view-1__window .clickable {
+    width: 30px;
+    height: 30px;
+    top: 24px;
+    left: 40px;
+}
+.view-1__sofa {
+    position: absolute;
+    bottom: 80px;
+    left: 120px;
+    transform: translate(-50%, 0);
+    height: 150px;
+    width: 240px;
+    z-index: 2;
+    background: url("../source/sofa3.png") center/100% 100% no-repeat;
+}
+.view-1__sofa .clickable {
+    width: 30px;
+    height: 15px;
+    top: 30px;
+    left: 180px;
+}
+.view-1__table {
+    position: absolute;
+    bottom: 80px;
+    left: 240px;
+    transform: translate(-50%, 0);
+    height: 90px;
+    width: 150px;
+    z-index: 3;
+    background: url("../source/table.png") center/100% 100% no-repeat;
+}
+.view-1__table .clickable {
+    width: 120px;
+    height: 20px;
+    top: 7px;
+    left: 15px;
+}
+.view-1__plant {
+    position: absolute;
+    bottom: 150px;
+    left: 260px;
+    transform: translate(-50%, 0);
+    height: 200px;
+    width: 130px;
+    z-index: 1;
+    background: url("../source/plant.png") center/100% 100% no-repeat;
+}
+.view-1__plant .clickable {
+    width: 25px;
+    height: 20px;
+    top: 28px;
+    right: 15px;
+}
+.view-1__safe {
+   
+}
+.view-1__carpet {
+    position: absolute;
+    bottom: 10px;
+    left: 400px;
+    transform: translate(-50%, 0);
+    height: 160px;
+    width: 450px;
+    z-index: 1;
+    background: url("../source/carpet.png") center/100% 100% no-repeat;
+}
+.view-1__carpet .clickable {
+    width: 50px;
+    height: 30px;
+    bottom: 7px;
+    right: 15px;
+}
+.view-1__picture {
+    position: absolute;
+    top: 150px;
+    right: 60px;
+    height: 100px;
+    width: 90px;
+    z-index: 1;
+    background: url("../source/picture1.png") center/100% 100% no-repeat;
+}
+.view-1__picture .clickable {
+    width: 100%;
+    height: 70%;
+    bottom: 15px;
+    right: 0;
+}
